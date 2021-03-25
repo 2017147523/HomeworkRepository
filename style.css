@@ -1,0 +1,12 @@
+
+
+body    {font-family: Tahoma, Geneva, Verdana, sans-serif ;}
+h1      {font-size : 40pt; font-family: Arial, Helvetica, sans-serif; color: purple;}
+em      {background-color: yellow;}
+hr      {border: double; color: teal;}
+#MessageColor    {color: red;}
+#button1   {background-color:burlywood;padding: 10px;margin: 15px;border: double; width:100px; height: 50px;}
+#button2   {background-color:brown;padding: 10px;margin: 15px;border: double; width: 100px; height: 50px;}
+#Message   {font-size: 20pt; width: 85%; text-align: left;}
+#Login     {font-size: 13pt; font-weight: bold; background-color: white; float: left; width:10%; border:0;}
+#SignUp     {font-size: 13pt; font-weight: bold; background-color:  white; float: left; width:10%; border:0;}
