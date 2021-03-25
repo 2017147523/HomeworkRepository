@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html>
+    <title>Assignment2</title>
+    <link rel = "stylesheet" type = "text/css" href="style.css">
+
+</head>
+    
+    <body>
+        <h1>The Shop of Internet Programming</h1>
+        
+            
+       
+        <form method = "get" autocomplete="on" action = "http://www.example.com" >
+        <p id = "Message">
+            This is the site for purchase a variety of products which is designed for Internet
+            Programming Course.
+            
+        </p>
+        <p>
+            <input type = "button" name ="Login" value="Login" onclick="location.href='Login.html'"" button id = "Login">
+        </p>
+        <p>
+            <input type = "button" name ="SignUp" value="SignUp" onclick="location.href='SignUp.html'"" button id = "SignUp">
+        </p>
+        <br>      
+        <br>
+
+            <hr>
+            <p id = "MessageColor">
+                <em>Please Filling the boxes (Necessary)</em>
+            </p>
+            <p>
+                <label>Name:
+                    <input type = "text" autofocus />
+
+                </label>
+            </p>
+            <p>
+                <label>ID:
+                    <input type ="text" id = "id" autocomplete="on"/>
+                </label>
+            </p>
+            <p>
+                <label>Password:
+                    <input type = "password" pattern="[0-9]+" />
+                    (Numbers Only)
+                </label>
+            </p>
+
+            <p>
+                <label>Birth Date:
+                    <input type = "date" />
+                        (yyyy-mm-dd)
+                </label>
+            </p>
+            <p>
+                <label>Email:
+                    <input type = "email" required />
+                </label>
+            </p>
+            
+            <p>
+                <label>Tel:
+                    <input type = "tel" placeholder= "###-####-####" />
+                </label>
+            </p>
+           
+            
+            <p>
+                <input type = "submit" value = "Submit" submit id="button1"/>
+                <input type = "reset" value= "Clear" reset id = "button2"/>
+            </p>
+            <hr>
+        </form>
+    </body>
+</html>
