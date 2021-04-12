@@ -1,0 +1,43 @@
+
+
+body    {font-family: Tahoma, Geneva, Verdana, sans-serif ;}
+h1      {font-size : 40pt; font-family: Arial, Helvetica, sans-serif; color: blue;}
+em      {background-color: yellow;}
+hr      {border: double; color: teal;}
+img     {transition : transform 2s; }
+
+
+img:hover{transform: scale(2,2); overflow: hidden; }
+
+p       {margin:0.5em; text-align: justify;}
+section{column-count: 3; column-gap: 15px; column-width: 200px; column-rule-style: double; column-rule-width:thick; float: right; }
+
+.mybox {border: 1px solid; width: 400px; height: 400px; text-align: center;overflow: hidden;display: flex;align-items: center;justify-content: center; float: left;}
+.mybox img{width:50%;height:50%;max-width: 100%;max-height: 100%;}
+
+
+
+
+.layout {width:1020px; margin: 0 auto;}
+
+
+#box    {border: 5px; background-color:purple;height: 10px; width: 1020px;}
+
+#ani     {animation-duration: 2s; animation-name: slide;}
+@keyframes slide{
+    from{
+        margin-left: 100%;
+        width: 300%
+    }
+    to{
+        margin-left: 0%;
+        width: 100;
+    }
+}
+
+#MessageColor    {color: red;}
+#button1   {background-color:burlywood;padding: 10px;margin: 15px;border: double; width:100px; height: 50px;}
+#button2   {background-color:brown;padding: 10px;margin: 15px;border: double; width: 100px; height: 50px;}
+#Message   {font-size: 20pt; width: 85%; text-align: left;}
+#Login     {font-size: 13pt; font-weight: bold; background-color: white; float: left; width:10%; border:0;}
+#SignUp     {font-size: 13pt; font-weight: bold; background-color:  white; float: left; width:10%; border:0;}
