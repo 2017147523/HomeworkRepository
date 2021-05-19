@@ -1,0 +1,142 @@
+/* General */
+
+html {
+  font-size: 10px;
+}
+
+body {
+  width: 800px;
+  margin: 0 auto;
+}
+
+/* Typography */
+
+
+
+
+
+
+
+
+/* block styling */
+
+header, aside, main, footer {
+  padding: 20px;
+}
+
+header {
+  border: 4px solid black;
+  border-bottom: 0;
+}
+
+aside {
+  border-right: 4px solid black;
+}
+
+body > div {
+  border: 4px solid black;
+  display: flex;
+}
+
+footer {
+  border: 4px solid black;
+  border-top: 0;
+}
+
+aside {
+  flex: 3;
+}
+
+main {
+  flex: 4;
+}
+
+/* Form styling */
+
+aside {
+  display: flex;
+  flex-flow: column;
+  align-items: stretch;
+}
+
+aside div {
+  margin-bottom: 22px;
+}
+
+label, select, input {
+  display: block;
+}
+
+label {
+  margin-bottom: 5px;
+}
+
+select, input, button {
+  width: 100%;
+}
+
+input {
+  background: yellowgreen;
+  color: blueviolet;
+  border: none;
+  padding: 5px;
+  width: 200px;
+}
+
+button {
+  background: yellowgreen;
+  color: white;
+  padding: 5px;
+  border: solid;
+  border-radius: 10px;
+  
+}
+
+/* Styling the products */
+
+main {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+section {
+  width: 42%;
+  margin: 6px;
+  position: relative;
+  height: 215px;
+}
+
+section img {
+  width: 200px;
+  height: 200px;
+  display: block;
+  position: absolute;
+  bottom: 0px;
+}
+section span {
+  background: purple ;
+  color:white ;
+  width:50px;
+  height:50px;
+  position:absolute;
+  text-align:center;
+}
+
+section p {
+  color:red;
+  font-weight:bold;
+  font-size: 13pt;
+  width: 60px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  position: absolute;
+  right: 1px;
+ 
+  z-index: 1000;
+}
+#Login     {font-size: 13pt; font-weight: bold; background-color: white; float: left; width:10%; border:0;}
+#SignUp     {font-size: 13pt; font-weight: bold; background-color:  white; float: left; width:10%; border:0;}
+#Home     {font-size: 13pt; font-weight: bold; background-color:  white; float: left; width:10%; border:0;}
+

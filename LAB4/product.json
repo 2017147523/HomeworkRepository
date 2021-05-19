@@ -1,0 +1,98 @@
+[
+  {
+    "name" : "ipad pro",
+    "price" : 799,
+    "image" : "ipadpro.jpg",
+    "type" : "tablet"
+  },
+  {
+    "name" : "ipad mini",
+    "price" : 399,
+    "image" : "ipadmini.jpg",
+    "type" : "tablet"
+  },
+  {
+    "name" : "ipad air",
+    "price" : 599,
+    "image" : "ipadair.jpg",
+    "type" : "tablet"
+  },
+  {
+    "name" : "galaxy tab",
+    "price" : 499,
+    "image" : "galaxytab.jpg",
+    "type" : "tablet"
+  },
+  {
+    "name" : "iphone 12 mini",
+    "price" : 699,
+    "image" : "iphonemini.jpg",
+    "type" : "phone"
+  },
+  {
+    "name" : "iphone 12 pro",
+    "price" : 999,
+    "image" : "iphonepro.jpg",
+    "type" : "phone"
+  },
+  {
+    "name" : "galaxy s21",
+    "price" : 899,
+    "image" : "galaxys.jpg",
+    "type" : "phone"
+  },
+  {
+    "name" : "galaxy z fold 2",
+    "price" : 1099,
+    "image" : "galaxyz.jpg",
+    "type" : "phone"
+  },
+  {
+    "name" : "macbook air",
+    "price" : 999,
+    "image" : "macair.jpg",
+    "type" : "pc"
+  },
+  {
+    "name" : "imac",
+    "price" : 1299,
+    "image" : "imac.jpg",
+    "type" : "pc"
+  },
+  {
+    "name" : "galaxybook",
+    "price" : 999,
+    "image" : "galaxybook.jpg",
+    "type" : "pc"
+  },
+  {
+    "name" : "gram",
+    "price" : 899,
+    "image" : "gram.jpg",
+    "type" : "pc"
+  },
+  {
+    "name" : "surface",
+    "price" : 899,
+    "image" : "surface.jpg",
+    "type" : "pc"
+  },
+  {
+    "name" : "gigabyte",
+    "price" : 999,
+    "image" : "gigabyte.jpg",
+    "type" : "pc"
+  },
+  {
+    "name" : "lgwing",
+    "price" : 799,
+    "image" : "lgwing.jpg",
+    "type" : "phone"
+  },
+  {
+    "name" : "hongmi",
+    "price" : 399,
+    "image" : "hongmi.jpg",
+    "type" : "phone"
+  }
+]

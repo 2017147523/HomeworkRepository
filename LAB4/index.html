@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>The Yonsei Store</title>
+    <link href="main.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <header>
+      <h1>The Yonsei Store</h1>
+      <p>
+        <input type = "button" name ="Home" value="Home" onclick="location.href='index.html'"" button id = "Home">
+      </p>
+      <p>
+        <input type = "button" name ="Login" value="Login" onclick="location.href='login.html'"" button id = "Login">
+      </p>
+      <p>
+        <input type = "button" name ="SignUp" value="SignUp" onclick="location.href='signup.html'"" button id = "SignUp">
+      </p>
+      <br>
+      <br>
+    </header>
+    <div>
+      <aside>
+        <form>
+          <div>
+            <label for="category">Select a category:</label>
+            <select id="category">
+              <option selected>All</option>
+              <option>PC</option>
+              <option>Tablet</option>
+              <option>Phone</option>
+            </select>
+          </div>
+          <div>
+            <label for="searchTerm">Search the device name:</label>
+            <input type="text" id="searchTerm" placeholder="e.g galaxy">
+          </div>
+          <div>
+            <button>Search!</button>
+          </div>
+        </form>
+      </aside>
+      <main>
+        
+        <script>
+        
+            var products;
+          
+            fetch('product.json').then(function(response) {
+              if(response.ok) {
+                response.json().then(function(json) {
+                  products = json;
+                  initialize();
+                });
+              } else {
+                console.log('Error');
+              }
+            })  
+            function initialize() {
+              var category = document.querySelector('#category');
+              var searchTerm = document.querySelector('#searchTerm');
+              var searchBtn = document.querySelector('button');
+              var main = document.querySelector('main');
+              var imagebox = document.querySelector('#box');
+              var lastCategory = category.value;
+              var lastSearch = '';
+
+              
+              var categoryGroup;
+              var finalGroup;
+
+              
+              finalGroup = products;
+              updateDisplay();
+
+              categoryGroup = [];
+              finalGroup = [];
+
+              searchBtn.onclick = selectCategory;
+
+              function selectCategory(e) {
+                e.preventDefault();
+
+                categoryGroup = [];
+                finalGroup = [];
+
+                if(category.value === lastCategory && searchTerm.value.trim() === lastSearch) {
+                  return;
+                } else {
+              
+                  lastCategory = category.value;
+                  lastSearch = searchTerm.value.trim();
+
+                  if(category.value === 'All') {
+                    categoryGroup = products;
+                    selectProducts();
+
+                  } else {
+
+                    var lowerCaseType = category.value.toLowerCase();
+                    for(var i = 0; i < products.length ; i++) {
+
+                      if(products[i].type === lowerCaseType) {
+                        categoryGroup.push(products[i]);
+                      }
+                    }
+
+                    selectProducts();
+                  }
+                }
+              }
+
+              
+              function selectProducts() {
+                
+                if(searchTerm.value.trim() === '') {
+                  finalGroup = categoryGroup;
+                  updateDisplay();
+                } else {
+                  
+                  var lowerCaseSearchTerm = searchTerm.value.trim().toLowerCase();
+                                    for(var i = 0; i < categoryGroup.length ; i++) {
+                    if(categoryGroup[i].name.indexOf(lowerCaseSearchTerm) !== -1) {
+                      finalGroup.push(categoryGroup[i]);
+                    }
+                  }
+
+                  
+                  updateDisplay();
+                }
+
+              }
+
+              
+              function updateDisplay() {
+                while (main.firstChild) {
+                  main.removeChild(main.firstChild);
+                }
+
+                if(finalGroup.length === 0) {
+                  var para = document.createElement('p');
+                  para.textContent = 'No Data !';
+                  main.appendChild(para);
+                } else {
+                  for(var i = 0; i < finalGroup.length; i++) {
+                    fetchBlob(finalGroup[i]);
+                  }
+                }
+              }
+
+              function fetchBlob(product) {
+                
+                var url = 'images/' + product.image;
+                fetch(url).then(function(response) {
+                  if(response.ok) {
+                    response.blob().then(function(blob) {
+                      
+                      var objectURL = URL.createObjectURL(blob);
+                      showProduct(objectURL, product);
+                    });
+                  } else {
+                    console.log('Network request for "' + product.name + '" image failed with response ' + response.status + ': ' + response.statusText);
+                  }
+                });
+              }
+              
+              
+              function showProduct(objectURL, product) {
+            
+                var section = document.createElement('section');
+                var heading = document.createElement('head');
+                var para = document.createElement('p');
+                var span = document.createElement('span');
+                var image = document.createElement('img');
+                var button = document.createElement('click');
+                
+                section.setAttribute('class', product.type);
+            
+
+                heading.textContent = product.name.replace(product.name.charAt(0), product.name.charAt(0).toUpperCase());
+
+                
+                image.src = objectURL;
+                image.alt = product.name;
+                span.textContent = "Click me!"
+                span.onclick = function(){
+                  section.appendChild(para);
+                  heading.textContent=product.name;
+                  para.textContent = "$"+product.price + "\n"+product.name;
+                }
+                
+                main.appendChild(section);
+                section.appendChild(span);
+                section.appendChild(image);
+              }
+            }
+            
+      
+        </script>
+      </main>
+    </div>
+    <footer>
+      <p>This site is made for the assignment of Internet Programming Course</p>
+      
+    </footer>
+    
+  </body>
+</html>
